@@ -1,38 +1,75 @@
-# AI Photo System – Master Control Panel
+# AI Photo System — Control Panel
 
-本系統為「永久型 AI 相片指令系統」  
-所有指令以 GitHub 為唯一真實來源（Single Source of Truth）  
-ChatGPT 僅作為「指令修改器」，不負責儲存、不負責記憶。
+**Version:** v2.0 | **Last Modified:** 2026-01-17
 
----
-
-## \ud83d\udccc 使用方式
-
-1. 於下方選擇系統模組  
-2. 進入對應頁面  
-3. 將該頁完整內容貼入 ChatGPT 作修改  
-4. 修改完成後，由使用者 / Agent 更新回 GitHub  
+> **Use by clicking.  
+> Do not type prompts.  
+> Tokens live inside system pages.**
 
 ---
 
-## \ud83e\udd23 系統模組選單（請選擇）
+## 🔹 Step 1 — Choose a System
 
-1. 舊相修復系統  
-   👉 `/systems/photo_restore.md`
+### 📷 Image Systems
 
-2. 人物身份鎖定合成系統  
-   👉 `/systems/identity_composite.md`
+- ▶️ **舊相修復系統**  
+  🗆 [Open System](systems/photo_restore.md)
 
-3. 去 AI 感寫實強化系統  
-   👉 `/systems/realism_deAI.md`
+- ▶️ **人物身份鎖定合成系統**  
+  🗆 [Open System](systems/identity_composite.md)
 
-4. Grok Imagine / Video Seed 圖像系統  
-   👉 `/systems/video_seed.md`
+- ▶️ **去 AI 感寫實強化系統**  
+  🗆 [Open System](systems/realism_deAI.md)
+
+- ▶️ **Video Seed 圖像系統（SD-i2v）**  
+  🗆 [Open System](systems/video_seed.md)
 
 ---
 
-## \u26a0\ufe0f 系統原則（不可移除）
+## 🔹 Step 2 — What do you want to do?
 
-- 本頁只作選單用途，不放 GPT 指令  
-- 所有功能邏輯只存在於 `/systems/`  
-- 任何版本修改必須經 GitHub commit 
+> （點擊後，直接跟頁內指彊操作）
+
+- ✅ **Use as-is**  
+  → 直接 copy Token block 使用
+
+- ✏️ **Edit Tokens**  
+  → 把整個系統頁貼入 ChatGPT 修改  
+  → 再 commit 回 GitHub
+
+- 🔁 **Back to Menu**  
+  → 回到此頁
+
+---
+
+## 🔹 Step 3 — How to use (1 minute)
+
+1. 點一個系統  
+2. 到系統頁面  
+3. Copy Token block  
+4. 用在 Stable Diffusion / Grok Imagine / i2v  
+5. 完成
+
+---
+
+## 🤔 Rules (Do Not Skip)
+
+- ❌ 不在此頁寫 Prompt
+- ❌ 不在此頁改 Token
+- ✅ 所有指令只存在於 `systems/*.md`
+- ✅ 只用合法 Token（見 `token_schema.json`）
+
+---
+
+## ⚙️ Advanced (Optional)
+
+- 📜 Token Schema  
+  🗆 [token_schema.json](token_schema.json)
+
+- 🗄 Menu Config  
+  🗆 [menus/menu.json](menus/menu.json)
+
+---
+
+**System Status:** `Semantic Token v2.0`  
+**Model Assumption:** `Stable Diffusion–based`

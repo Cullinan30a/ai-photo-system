@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "entry": "index.md",
+  "modules": [
+    {
+      "id": "photo_restore",
+      "title_zh": "舊相修復系統",
+      "path": "systems/photo_restore.md",
+      "default_action": "use"
+    },
+    {
+      "id": "identity_composite",
+      "title_zh": "人物身份鎖定合成系統",
+      "path": "systems/identity_composite.md",
+      "default_action": "use"
+    },
+    {
+      "id": "realism_deAI",
+      "title_zh": "去 AI 感寫實強化系統",
+      "path": "systems/realism_deAI.md",
+      "default_action": "enhance"
+    },
+    {
+      "id": "video_seed",
+      "title_zh": "Grok Imagine / Video Seed 圖像系統",
+      "path": "systems/video_seed.md",
+      "default_action": "prepare"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Photo System Token Schema",
+  "type": "object",
+  "required": ["ROLE", "MODE", "STATE", "OUTPUT", "VERSION"],
+  "properties": {
+    "ROLE": {
+      "type": "string",
+      "enum": [
+        "IMAGE_RESTORE_SYSTEM",
+        "IMAGE_COMPOSITE_SYSTEM",
+        "DEAI_REALISM_SYSTEM",
+        "VIDEO_SEED_SYSTEM"
+      ]
+    },
+    "MODE": {
+      "type": "string",
+      "enum": ["SAFE", "BALANCED", "AGGRESSIVE"]
+    },
+    "STATE": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "SD_BEHAVIOR",
+          "IDENTITY_LOCKED",
+          "REALISM_ONLY",
+          "DEAI_STRICT",
+          "SEED_STABLE"
+        ]
+      }
+    },
+    "INPUT": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "OLD_PHOTO",
+          "TARGET_IMAGE",
+          "AI_LOOKING_IMAGE",
+          "OPTIONAL_ID_REF",
+          "OPTIONAL_SCENE_REF"
+        ]
+      }
+    },
+    "ANCHOR": {
+      "type": "object",
+      "properties": {
+        "SCENE": { "enum": ["A"] },
+        "FACE": { "enum": ["B"] }
+      },
+      "additionalProperties": false
+    },
+    "CONSTRAINT": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "NO_STYLE",
+          "NO_BEAUTIFY",
+          "NO_AGE_SHIFT",
+          "NO_FACE_RESHAPE",
+          "NO_FAKE_DETAIL",
+          "NO_COMPLEX_LIGHT",
+          "NO_EXTREME_POSE"
+        ]
+      }
+    },
+    "PROCESS": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "RESTORE_DAMAGE",
+          "NORMALIZE_LIGHT",
+          "TEXTURE_REAL",
+          "LOCK_SCENE",
+          "TRANSFER_ID",
+          "LIGHT_MATCH",
+          "REMOVE_ARTIFACT",
+          "REBUILD_TEXTURE",
+          "FIX_LIGHT",
+          "SIMPLIFY_COMPOSITION",
+          "STABILIZE_POSE",
+          "LOCK_ID"
+        ]
+      }
+    },
+    "SEED_RULE": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "STRUCTURE_FIRST",
+          "EDGE_CLEAR",
+          "POSE_STABLE",
+          "LIGHT_SIMPLE"
+        ]
+      }
+    },
+    "FAILURE": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ROLLBACK",
+          "REDUCE_DETAIL",
+          "RELOCK_ID",
+          "RESEED",
+          "NO_ITERATION"
+        ]
+      }
+    },
+    "QUALITY": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "FACE_OK",
+          "SKIN_REAL",
+          "HAND_OK",
+          "EDGE_CLEAN",
+          "LIGHT_LOGIC",
+          "NON_AI"
+        ]
+      }
+    },
+    "OUTPUT": {
+      "type": "string",
+      "enum": [
+        "FINAL_IMAGE",
+        "SEED_IMAGE",
+        "VIDEO_SEED_IMAGE"
+      ]
+    },
+    "VERSION": {
+      "type": "string",
+      "pattern": "^v[0-9]+\\.[0-9]+$"
+    }
+  },
+  "additionalProperties": false
+}
